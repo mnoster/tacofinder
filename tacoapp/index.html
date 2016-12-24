@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Tacos</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Bungee|Mogra" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="scripts/googlePlaceApi.js"></script>
+</head>
+<body id="front">
+<div class="container" style="padding: 0">
+    <div class="frontMain">
+        <div class="col-xs-12">
+            <h1 id="landingHeader" class="text-center">FIND ME TACOS!</h1>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group text-center input">
+                <!--<input type="text" class="form-control" id="input" placeholder="Search">-->
+                <a id="newpage"><span type="image" id="main-button" onclick="run_taco_cat()"><img id="buttonImage" src="images/Taco_pin_button.png"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<img src="images/palm-tree-png-31904.png" class="palmtree">
+<img src="images/palm-trees-308383_1280.png" class="palmtree2">
+<img src="images/taco_cat.png" class="taco-cat">
+<img src="images/Grass_Silhouette.png" class="grass-img">
+<script>
+    document.getElementById("newpage").onclick = function() {
+        setTimeout(function() {
+            // do stuff
+            $("#newpage").attr("href" , "results.html");
+        }, 1800); // triggers the callback after 1.8s
+    };
+    // moving taco cat animation
+    function run_taco_cat(){
+        $(".taco-cat").animate({left: "+=500"}, 2000);
+        $(".taco-cat").animate({left: "-=300"}, 1000);
+    }
+
+</script>
+</body>
+</html>

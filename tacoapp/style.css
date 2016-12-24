@@ -1,0 +1,312 @@
+/*LANDING PAGE*/
+.frontMain {
+    margin-top: 15vw;
+    color: red;
+    -webkit-text-stroke: 2px green;
+    font-family: 'Mogra';
+}
+
+#landingHeader{
+    font-size: 91px;
+    font-family: 'Mogra';
+}
+body{
+    background-color: #ddff23;
+}
+#front{
+    /*background-image: url(images/Gradient.jpg);*/
+    background-color: #ddff23;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#headerName{
+    font-family: 'Mogra';
+    margin-top: 7px;
+    color: black;
+}
+@keyframes zoom {
+    0% {
+        transform: scale(.1,.1);
+    }
+    50%{
+        transform: scale(1.5,1.5);
+    }
+    100% {
+        transform: scale(.1,.1);
+    }
+}
+#taco{
+    height: 100px;
+    width: 125px;
+}
+
+#main-button{
+    background-color: transparent;
+    border: none;
+    margin-top: 69px;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+}
+#main-button:hover, a:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        height: 175px;
+    }
+    50%{
+        height: 190px;
+    }
+    100% {
+        height: 175px;
+    }
+}
+@keyframes pulse {
+    0% {
+        height: 175px;
+    }
+    50%{
+        height: 190px;
+    }
+    100% {
+        height: 175px;
+    }
+}
+#button:focus{
+    outline: none;
+}
+#button:active #buttonImage{
+    filter: drop-shadow(2px 2px 2px white);
+    -webkit-filter: drop-shadow(2px 2px 2px white);
+    height: 175px;
+    animation: none;
+
+}
+/*RESULTS PAGE*/
+#resultsMain{
+    /*background-image: url(images/Gradient.jpg);*/
+    background-color: #ddff23;
+}
+#resultsHeader{
+    /*padding:2px 0;*/
+    font-family:'Anton';
+    color: yellow;
+    font-size: 50px;
+    margin-top: -5px;
+}
+.storeInfo{
+    text-align: center;
+    font-family:'Bungee';
+}
+
+#buttonImage{
+
+    height: 200px;
+    filter: drop-shadow(7px 7px 7px white);
+    -webkit-filter: drop-shadow(5px 5px 5px white);
+    animation: pulse 2s infinite;
+}
+
+#zipInput {
+    margin-top: -50px;
+}
+.storePic {
+    height: 120px;
+    width: 145px;
+    margin-left: -23px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map,#map2{
+    height: 31%;
+    width:100%;
+    /*margin-top: 12px;*/
+}
+
+/*LOADING PAGE*/
+
+@keyframes zoom {
+    0% {
+        transform: scale(.5, .5);
+    }
+
+    50% {
+        transform: scale(2, 2)
+    }
+
+    100% {
+        transform: scale(.5, .5);
+    }
+}
+#frontLoad{
+    background-image: url(images/space.jpg);
+    transition: all 10s ease;
+    animation: zoom 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#loadIcon {
+            margin-left: 180px;
+            margin-top: 340px;
+        }
+.spinningTaco {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+#loadIcon{
+    margin-left: 166px;
+    margin-top: 325px;
+
+ }
+@-webkit-keyframes spin {
+    from {
+             -webkit-transform: rotate(0deg);
+         } to {
+                      -webkit-transform: rotate(360deg);
+                  }
+}
+
+@media (max-width: 736px) and (orientation: landscape){
+    .landscape {
+        width: 368px;
+        margin-left: -15px;
+    }
+    #cheapCarousel{
+        border-bottom: 3px solid black;
+    }
+}
+@media (max-width: 667px) and (orientation: landscape){
+    .landscape {
+        width: 332px;
+        margin-left: -15px;
+    }
+    #cheapCarousel{
+        border-bottom: 3px solid black;
+    }
+}
+@media (max-width: 568px) and (orientation: landscape){
+    .landscape {
+        width: 284px;
+        margin-left: -15px;
+    }
+    #cheapCarousel{
+        border-bottom: 3px solid black;
+    }
+}
+/* Portrait iphone 5 */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    #landingHeader {
+        font-size: 69px;
+    }
+    #buttonImage{
+        height: 160px;
+    }
+    #main-button{
+        margin-top: 29px;
+    }
+}
+
+/*CAROUSEL CSS*/
+.navbar {
+    margin:0;
+}
+#qualityCarousel{
+    height: 30%;
+    border-bottom: 3px black solid;
+
+}
+#cheapCarousel{
+    height:30%;
+
+}
+.carousel-inner {
+    height:100%;
+    width:100%;
+    background-color: rgba(144, 137, 139, 0.1);
+}
+.tacoPic {
+    margin:auto;
+    height:100%;
+    width:100%;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+.tacoPic{
+    height:125px;
+    width:125px;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+.cheapStoreName,.qualityStoreName{
+    font-size: 25px;
+}
+.openCloseStatus2,.openCloseStatus{
+    display: inline-block;
+    font-family: 'Indie Flower';
+    color: black;
+    width: 150px;
+
+}
+#resultsHeader{
+    padding-left: 8px;
+}
+.palmtree,.palmtree2{
+    position: absolute;
+    bottom: 0;
+    height:75px;
+    width:auto;
+}
+.palmtree2{
+    right:4px;
+}
+.taco-cat{
+    height:52px;
+    position: absolute;
+    bottom: 10px;
+    left:32px;
+}
+.main-contain{
+    padding: 0;
+}
+
+.glyphicon-chevron-right:before {
+    color: black;
+}
+.carousel-indicators li{
+    border: 1px solid #000;
+}
+.carousel-indicators .active{
+    background-color: black;
+}
+.grass-img{
+    position: absolute;
+    bottom: 0;
+    height:20px;
+    width:100%;
+}
+.logo-link{
+    text-decoration: none;
+    color : #000000;
+}

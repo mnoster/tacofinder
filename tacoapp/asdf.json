@@ -1,0 +1,36 @@
+{
+  "html_attributions" : [],
+  "results" : [
+    {
+      "formatted_address" : "8865 E Foothill Blvd # 103, Rancho Cucamonga, CA 91730, USA",
+      "geometry" : {
+        "location" : {
+          "lat" : 34.1063846,
+          "lng" : -117.6119295
+        },
+        "viewport" : {
+          "northeast" : {
+            "lat" : 34.10664439999999,
+            "lng" : -117.6118113
+          },
+          "southwest" : {
+            "lat" : 34.106298,
+            "lng" : -117.6119689
+          }
+        }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+      "id" : "1fbd4a9c104a78b7c174410e10a16ff72c148dab",
+      "name" : "Senor Baja",
+      "opening_hours" : {
+        "open_now" : true,
+        "weekday_text" : []
+      },
+      "place_id" : "ChIJHU1kl5s2w4ARwGSmC0EH61Y",
+      "rating" : 4.2,
+      "reference" : "CmRdAAAA9HSgBfk0zIQHk65teugVw2Ms_PUCDAbweDgdkeW5Xzu7syUdlAkUMlC6doPrReolWnQpEiUfK0ZhnHGE8TtP518dzdsrtTZJWzjjpFRQyU5s2hIIqx0RlgOv05dPqzy8EhBRH25j03TL6NgFGhUhfl5OGhTXy4TcGHkU0R3HzrgU7L0bONKORQ",
+      "types" : [ "restaurant", "food", "point_of_interest", "establishment" ]
+    }
+  ],
+  "status" : "OK"
+}

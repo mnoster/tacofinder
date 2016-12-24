@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Bungee|Mogra" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Bungee|Mogra|Anton" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="jquery.mobile.custom.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbT5jDNA6Gpmiv8Of8k6S-GaFBCQRco-s"></script>
+    <link rel="icon" href="images/nicetaco1.png">
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbT5jDNA6Gpmiv8Of8k6S-GaFBCQRco-s&callback=initMap2"></script>-->
+    <script src="foursquare.js"></script>
+
+</head>
+<body id="resultsMain">
+    <header>
+        <nav class="navbar navbar-dark" style="background-color: black;">
+            <a href="index.html" class="logo-link"><h2 id="resultsHeader">Tacos</h2></a>
+            <div id="zipInput" class="input-group col-xs-offset-7">
+                <input id="zipcode" type="text" class="form-control" placeholder="zip code" maxlength="5" onkeypress='validate(event)'>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="get_all_data()">Go!</button>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <!--CAROUSEL INDICATORS -->
+    <div class="container main-contain">
+        <div class="col-xs-12 col-md-5  landscape">
+            <div id="qualityCarousel" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#qualityCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#qualityCarousel" data-slide-to="1"></li>
+                    <li data-target="#qualityCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="col-xs-5">
+                            <img class="qualityStore1">
+                            <h4 class="openCloseStatus"></h4>
+                        </div>
+                        <div class="storeInfo col-xs-7">
+                            <h2 class="qualityStoreName"></h2>
+                            <button type="button" class="btn btn-primary btn-md">MORE INFO!</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-5">
+                            <img class="qualityStore1" >
+                            <h4 class="openCloseStatus"></h4>
+                        </div>
+                        <div class="storeInfo col-xs-7">
+                            <h2 class="qualityStoreName"></h2>
+                            <button type="button" class="btn btn-primary btn-md">MORE INFO!</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-5">
+                            <img class="qualityStore1" >
+                            <h4 class="openCloseStatus"></h4>
+                        </div>
+                        <div class="storeInfo col-xs-7">
+                            <h2 class="qualityStoreName"></h2>
+                            <button type="button" class="btn btn-primary btn-md">MORE INFO!</button>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-b" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-b" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+        </div>
+        </div>
+        <div class="col-xs-12 col-md-5 landscape">
+            <div id="cheapCarousel" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#cheapCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#cheapCarousel" data-slide-to="1"></li>
+                    <li data-target="#cheapCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="col-xs-5">
+                            <img class="cheapStore">
+                            <h4 class="openCloseStatus2"></h4>
+                        </div>
+                        <div class="storeInfo col-xs-7">
+                            <h2 class="cheapStoreName"></h2>
+                            <button type="button" class="btn btn-primary btn-md">MORE INFO!</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-5">
+                            <img class="cheapStore">
+                            <h4 class="openCloseStatus2"></h4>
+                        </div>
+                        <div class="storeInfo col-xs-7">
+                            <h2 class="cheapStoreName"></h2>
+                            <button type="button" class="btn btn-primary btn-md">MORE INFO!</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-5">
+                            <img class="cheapStore" >
+                            <h4 class="openCloseStatus2"></h4>
+                        </div>
+                        <div class="storeInfo col-xs-7">
+                            <h2 class="cheapStoreName"></h2>
+                            <button type="button" class="btn btn-primary btn-md">MORE INFO!</button>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-b" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-b" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+                </div>
+            </div>
+    </div>
+
+<!--PRIOR TO CAROUSEL    -->
+    <!--<div class="col-xs-12">-->
+        <!--<h3>Best Quality Option</h3>-->
+    <!--</div>-->
+    <!--<div class="col-xs-12">-->
+        <!--<div class="col-xs-3">-->
+            <!--<img class="storePic" src="images/placeHolder.png">-->
+        <!--</div>-->
+        <!--<div class="col-xs-9">-->
+            <!--<h2 class="storeName">King Taco</h2>-->
+            <!--<h5>3.5 Miles Away</h5>-->
+            <!--<h5>1118 Cypress Ave.<br>-->
+                <!--Los Angeles, Ca 90065</h5>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-12">-->
+        <!--<h3>Cheapest Pricing Option</h3>-->
+    <!--</div>-->
+    <!--<div class="col-xs-12">-->
+        <!--<div class="col-xs-3">-->
+            <!--<img class="storePic" src="images/placeHolder.png">-->
+        <!--</div>-->
+        <!--<div class="col-xs-9">-->
+            <!--<h2 class="storeName">Taco Bell</h2>-->
+            <!--<h5>25.8 Miles Away</h5>-->
+            <!--<h5>26521 ALISO CREEK ROAD<br>-->
+                <!--ALISO VIEJO, CA 92656</h5>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div id="map" ></div>
+
+</body>
+</html>

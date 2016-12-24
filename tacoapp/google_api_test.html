@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google API Test</title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+        //future calls can add the property apiKey to override mine
+        //returns one place by business id ChIJHU1kl5s2w4ARwGSmC0EH61Y
+        //"ChIJJzmkwxnp3IARth5OrIbl8to"
+        function googlePlaceId(){
+            var idData = {mode: "placeIdSearch", id: "ChIJJzmkwxnp3IARth5OrIbl8to"}
+            $.ajax({
+                url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+                data: idData,
+                method: 'post',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        }
+    //returns one place searches by phone number and lat/long
+        function googlePlacePhone(){
+            //takes in a phone and lat lon coordiantes
+            var phoneData = {mode: "phoneSearch", phone: 9494724468, lat: 33.665242, lon:-117.7490656};
+            $.ajax({
+                url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+                data: phoneData,
+                method: 'post',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        }
+    //returns a list of places by radius and lat and long
+        function googlePlaceRadius(){
+            // takes in radius in meters , lat lon coordinates, and search keyword defaults to taco
+            var radiusData = {mode: "radiusSearch", radius: 10000, lat: 33.665242, lon:-117.7490656, keyword: 'taco'};
+            $.ajax({
+                url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+                data: radiusData,
+                method: 'post',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        }
+
+        function dataStorageId(){
+            // searches our database based on phone, latlon, or id
+            //search using strings for now
+            //var searchData = {mode: "idQuery", phone: "9494724468", latlon:"33.6134798,-117.6796659", id:"ChIJJzmkwxnp3IARth5OrIbl8to"};
+            var searchData = {mode: "idQuery", phone:"9494724468"};
+            $.ajax({
+                url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+                data: searchData,
+                method: 'post',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        }
+
+        function addPlaceId(){
+            // adds a google place Id to database
+            // all properties currently in string format
+            var searchData = {mode: "addPlace", phone: "4364374433453", latlon:"13.6134798,-11.6796659", id:"fakeplaceidhere", name:'tasty freeze pizza'};
+            $.ajax({
+                url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+                data: searchData,
+                method: 'post',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                }
+            })
+        }
+
+
+</script>
+
+</body>
+</html>

@@ -130,7 +130,12 @@ function init_images(){
 function get_all_data(){
     var query_text = 'tacos';
     var zip_code = $("#zipcode").val();
-        // zip_code= 90405;//hard-coded for testing; this value would be entered by user into zip code field that would appear on page if geolocation data is not available/allowed by user
+    if(!zip_code){
+        zip_code= 90014;
+    }else{
+        zip_code= $("#zipcode").val();
+    }
+        //hard-coded for testing; this value would be entered by user into zip code field that would appear on page if geolocation data is not available/allowed by user
     var radius = 10000; //meters
     var lat_long = null;
     var list_item = {};
@@ -141,7 +146,7 @@ function get_all_data(){
     var long_by_price = [];
     var rating_array = [];
     var price_array = [];
-    var num_of_results = 2;
+    var num_of_results = 12;
     function get_lat_long(zip_code) {
         $.ajax({
             type: "GET",

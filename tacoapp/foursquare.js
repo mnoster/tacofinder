@@ -145,7 +145,7 @@ function get_all_data(){
     function get_lat_long(zip_code) {
         $.ajax({
             type: "GET",
-            url: 'http://maps.googleapis.com/maps/api/geocode/json?address=' + zip_code,
+            url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip_code,
             async: true,
             dataType: "json",
             success: function (result) {
@@ -367,7 +367,7 @@ function get_all_data(){
         // var phoneData = {mode: "phoneSearch", phone: 9494724468, lat: 33.665242, lon:-117.7490656};
         var phoneData = {mode: "phoneSearch", phone: phone, lat: lat, lon: long};
         $.ajax({
-            url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+            url: 'https://nealcloud.com/yelpaco/api/place_api.php',
             data: phoneData,
             method: 'post',
             dataType: 'json',
@@ -387,7 +387,7 @@ function get_all_data(){
         // var idData = {mode: "placeIdSearch", id: "ChIJHU1kl5s2w4ARwGSmC0EH61Y"};
         var idData = {mode: "placeIdSearch", id: place_id};
         $.ajax({
-            url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+            url: 'https://nealcloud.com/yelpaco/api/place_api.php',
             data: idData,
             method: 'post',
             dataType: 'json',
@@ -431,7 +431,7 @@ function get_all_data(){
         // takes in radius in meters , lat lon coordinates, and search keyword defaults to taco
         var radiusData = {mode: "radiusSearch", radius: 10000, lat: 33.665242, lon: -117.7490656, keyword: 'taco'};
         $.ajax({
-            url: 'http://nealcloud.com/yelpaco/api/place_api.php',
+            url: 'https://nealcloud.com/yelpaco/api/place_api.php',
             data: radiusData,
             method: 'post',
             dataType: 'json',
@@ -443,7 +443,7 @@ function get_all_data(){
 
     function google_places_search(phone, lat_long) {
         $.ajax({
-            url: 'http://nealcloud.com/yelpaco/api/place_id_api.php',
+            url: 'https://nealcloud.com/yelpaco/api/place_id_api.php',
             data: {id: "ChIJHU1kl5s2w4ARwGSmC0EH61Y"},
             method: 'post',
             dataType: 'json',

@@ -32,7 +32,7 @@ function init_images(){
     initMap(quality_lat, quality_long, price_lat, price_long);
     $('.cheapStore').attr('src',price_array_final[price_index].photo_link).addClass('tacoPic');
     $('.cheapStoreName').html(price_array_final[price_index].name);
-    $('.openCloseStatus2').html("<div>" +price_array_final[price_index].status+"</div>" + "<div style='display: inline-block'><img src='images/Taco_Pin.png'>&nbsp <span style='color:red'>Cheap</span></div>");
+    $('.openCloseStatus2').html("<div>" +price_array_final[price_index].status+"</div>" + "<div style='display: inline-block'><img src='images/Taco_pin.png'>&nbsp <span style='color:red'>Cheap</span></div>");
 
     price_index--;
     if(price_index<0){
@@ -90,7 +90,7 @@ function init_images(){
         initMap(quality_lat, quality_long, price_lat, price_long);
         $('.cheapStore').attr('src',price_array_final[price_index].photo_link).addClass('tacoPic');
         $('.cheapStoreName').html(price_array_final[price_index].name);
-        $('.openCloseStatus2').html("<div>" +price_array_final[price_index].status+"</div>" + "<div style='display: inline-block'><img src='images/Taco_Pin.png'>&nbsp <span style='color:red'>Cheap</span></div>");
+        $('.openCloseStatus2').html("<div>" +price_array_final[price_index].status+"</div>" + "<div style='display: inline-block'><img src='images/Taco_pin.png'>&nbsp <span style='color:red'>Cheap</span></div>");
 
         price_index--;
         if(price_index<0){
@@ -105,7 +105,7 @@ function init_images(){
         initMap(quality_lat, quality_long, price_lat, price_long);
         $('.cheapStore').attr('src',price_array_final[price_index].photo_link).addClass('tacoPic');
         $('.cheapStoreName').html(price_array_final[price_index].name);
-        $('.openCloseStatus2').html("<div>" + price_array_final[price_index].status+ "</div>" + "<div style='display: inline-block'><img src='images/Taco_Pin.png'>&nbsp <span style='color:red'>Cheap</span></div>");
+        $('.openCloseStatus2').html("<div>" + price_array_final[price_index].status+ "</div>" + "<div style='display: inline-block'><img src='images/Taco_pin.png'>&nbsp <span style='color:red'>Cheap</span></div>");
 
         price_index++;
         if(price_index > lat_by_rating.length-1){

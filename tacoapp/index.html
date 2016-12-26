@@ -9,6 +9,7 @@
     <meta name="viewport" content="initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="q/q.js"></script>
     <!--<script src="scripts/googlePlaceApi.js"></script>-->
 </head>
 <body id="front">
@@ -20,7 +21,7 @@
         <div class="col-xs-12">
             <div class="form-group text-center input">
                 <!--<input type="text" class="form-control" id="input" placeholder="Search">-->
-                <a id="newpage"><span type="image" id="main-button" onclick="run_taco_cat()"><img id="buttonImage" src="images/Taco_pin_button.png"></span></a>
+                <a id="newpage"><span type="image" id="main-button" onclick="run_taco_cat();geoFindMe();"><img id="buttonImage" src="images/Taco_pin_button.png"></span></a>
             </div>
         </div>
     </div>
@@ -30,18 +31,37 @@
 <img src="images/taco_cat.png" class="taco-cat">
 <img src="images/Grass_Silhouette.png" class="grass-img">
 <script>
+    $(document).ready(function(){
+        geoFindMe();
+    });
     document.getElementById("newpage").onclick = function() {
-        setTimeout(function() {
-            // do stuff
-            $("#newpage").attr("href" , "results.html");
-        }, 1800); // triggers the callback after 1.8s
+
     };
     // moving taco cat animation
-    function run_taco_cat(){
+    function run_taco_cat(lat,long){
         $(".taco-cat").animate({left: "+=500"}, 2000);
         $(".taco-cat").animate({left: "-=300"}, 1000);
+        setTimeout(function() {
+            // do stuff
+            window.location.replace("results.html?lat="+lat+"&long="+long );
+        }, 1400); // triggers the callback after 1.8s
     }
 
+    function geoFindMe() {
+        if (!navigator.geolocation){
+            console.log('Geolocation is not supported by your browser');
+            return;
+        }
+
+        function success(position) {
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+
+            console.log('Latitude is ' + lat + ' Longitude is ' + long);
+            run_taco_cat(lat,long)
+        }
+        navigator.geolocation.getCurrentPosition(success);
+    }
 </script>
 </body>
 </html>

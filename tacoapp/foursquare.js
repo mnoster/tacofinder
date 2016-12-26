@@ -2,9 +2,22 @@
  * Created by njporter10 on 9/8/16.
  */
 $(document).ready(function () {
-    get_all_data();
-
+    getUrlVars();
 });
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    get_all_data(vars);
+    console.log("lat long obj: " ,vars);
+}
 var quality_lat = [];
 var quality_long = [];
 var price_lat = [];
@@ -127,15 +140,9 @@ function init_images(){
 }
 
 
-function get_all_data(){
+function get_all_data(location_obj){
     var query_text = 'tacos';
     var zip_code = $("#zipcode").val();
-    if(!zip_code){
-        zip_code= 90014;
-    }else{
-        zip_code= $("#zipcode").val();
-    }
-        //hard-coded for testing; this value would be entered by user into zip code field that would appear on page if geolocation data is not available/allowed by user
     var radius = 10000; //meters
     var lat_long = null;
     var list_item = {};
@@ -147,6 +154,23 @@ function get_all_data(){
     var rating_array = [];
     var price_array = [];
     var num_of_results = 12;
+
+
+    if(!location_obj){
+        console.log('client denied location service');
+        //----------this is the FIRST function to be called in get all data-----------------
+        get_lat_long(zip_code);
+    }else{
+        lat_long = location_obj['lat'] + ',' + location_obj['long'];
+        four_square_search(query_text, lat_long);
+    }
+
+
+    if(!zip_code){
+        zip_code= 90014;
+    }else{
+        zip_code= $("#zipcode").val();
+    }
     function get_lat_long(zip_code) {
         $.ajax({
             type: "GET",
@@ -166,9 +190,6 @@ function get_all_data(){
             }
         })
     }
-
-//----------this is the FIRST function to be called in get all data-----------------
-    get_lat_long(zip_code);
 
 //----------this is the SECOND function to be called in get all data-----------------
     function four_square_search(query_text, lat_long) {
